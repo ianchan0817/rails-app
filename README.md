@@ -16,6 +16,7 @@ docker run --name=mongo -p 27017:27017 mongo
 rails g mongoid:config
 rails g rspec:install
 rake db:mongoid:create_indexes
+rake db:seed
 
 * How to run the test suite
 bundle exec rspec
