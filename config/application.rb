@@ -29,5 +29,7 @@ module RailsApp
     config.generators do |g|
       g.orm :mongoid
     end
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end
