@@ -1,6 +1,8 @@
 class Person
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AlgoliaSearch
+  extend Boyfriendable
 
   field :first_name, type: String
   validates_presence_of :first_name, allow_nil: false
@@ -14,5 +16,10 @@ class Person
   field :status, type: String, default: 'active'
 
   index({ first_name: 1 }, { unique: true })
+
+
+  algoliasearch do
+    # Use all default configuration
+  end
 
 end
